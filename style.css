@@ -44,7 +44,7 @@ html *
 }
 
 p{
-	color: white;
+	color: white !important;
 }
 
 table{
@@ -54,7 +54,7 @@ table{
 
 /*banner*/
 .banner{
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	text-align: center;
 	background-color: #0068B6;
@@ -72,7 +72,7 @@ table{
 /*us block*/
 
 .USstats{
-	width: 80%;
+	width: 100%;
 	background-color: #0068B6;
 	margin: auto;
 	padding-top: 8px;
@@ -118,7 +118,7 @@ table{
 /*CA block*/
 
 .CAstats{
-	width: 80%;
+	width: 100%;
 	background-color: #DA2E2E;
 	margin: auto;
 	padding-top: 8px;
@@ -188,11 +188,11 @@ table{
 }
 
 .inner{
-	width: 80%;
+	width: 100%;
 	background-color: #2a79b6;
 
 }
 
 .chartstyle{
-	width:35vw;
+	width:30vw;
 }
