@@ -3,6 +3,6 @@
     border-collapse: collapse;
 }
 
-.main :nth-child(odd){
+tr :nth-child(odd){
     background-color: #bfbfbf;
 }
