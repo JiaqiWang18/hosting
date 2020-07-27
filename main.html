@@ -1,0 +1,650 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>main</title>
+</head>
+<body>
+	<style>
+		@charset "utf-8";
+		/* CSS Document */
+
+		@media only screen and (max-width: 600px) 
+		{
+			th{
+				display: inline;
+			}
+			.title{
+				font-size: medium;
+			}
+			.chartth{
+				display: inline-block !important;
+			}
+			.chartstyle{
+				width:80% !important;
+			}
+			.occityth{
+				text-align: right;
+			}
+		}
+
+		html *
+		{
+		font-family: Arial !important;
+		}
+
+
+		.appcontainer{
+			margin: auto;
+			width: 100%;
+		}
+
+	    .title{
+			text-align: center;
+			color:white;
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		.centerct{
+			width: 90%;
+			margin: auto;
+		}
+
+		p{
+			color: white !important;
+		}
+
+		table{
+			border-collapse:collapse;
+		}
+
+
+		/*banner*/
+		.banner{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			background-color: #0068B6;
+			padding-top:5px;
+			padding-bottom:5px;
+			-webkit-box-shadow:inset 0px 0px 0px 6px #f00;
+			-moz-box-shadow:inset 0px 0px 0px 6px #f00;
+			box-shadow:inset 0px 0px 0px 6px #f00;
+
+		}
+
+		.font{
+			color: white;
+		}
+		/*us block*/
+
+		.USstats{
+			width: 80%;
+			background-color: #0068B6;
+			margin: auto;
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+		.USstatstb{
+			width: 100%;
+			overflow-y:auto;
+		}
+
+		.statscell{
+			background-color:#DA2E2E;
+			width: 60%;
+			margin:auto;
+			color:white;
+			padding: 8px;
+		}
+
+		.numcell{
+			background-color:#FF5C00;
+			width: 60%;
+			margin:auto;
+			padding: 8px;
+		}
+
+		.numtb{
+			width: 100%;
+			text-align: center;
+		}
+
+		.charts{
+			width: 90%;
+			margin: auto;
+			display: flex;
+			justify-content: center;
+		}
+
+		.chartstyle{
+			margin: auto;
+		}
+
+		/*CA block*/
+
+		.CAstats{
+			width: 80%;
+			background-color: #DA2E2E;
+			margin: auto;
+			padding-top: 8px;
+		}
+
+		.CAstatstb{
+			width: 100%;
+			overflow-y:auto;
+		}
+
+		.CAstatscell{
+			background-color:#0068B6;
+			width: 40%;
+			margin:auto;
+			color:white;
+			padding: 8px;
+		}
+
+		.CAnumcell{
+			background-color:#FF5C00;
+			width: 60%;
+			margin:auto;
+			padding: 8px;
+		}
+
+		.OCLA{
+			width: 100%;
+		}
+
+		.LAtb{
+			width: 100%;
+		}
+
+		.OCtb{
+			width: 100%;
+		}
+
+		.LAth{
+			width: 50%;
+		}
+
+		.OCth{
+			width:50%
+		}
+
+		/*OCcities*/
+		.OCcity{
+			width: 100% !important;
+			border: none !important;
+		}
+
+		.occityth{
+			width: 50%;
+			color:white;
+			padding: 5px;
+		}
+
+
+
+		.occitytrR {
+			background-color:#FF5C00;
+		}
+
+		/*charts*/
+		.charts{
+			width:100%;
+		}
+
+		.inner{
+			width: 80%;
+			background-color: #2a79b6;
+
+		}
+
+		.chartstyle{
+			width:35vw;
+		}
+	</style>
+	<div class = "appcontainer">
+		<div class = "banner">
+			<h2 class = "font">Student News Network COVID-19 Dashboard</h2>
+		</div>
+		<br>
+		<div class = "USstats">
+			<h3 class = "title">US COVID-19 Stats</h3>
+
+			<table class = "USstatstb">
+				<tr>
+					<th>
+						<div class = "statscell">
+							<h4 id = "USTTlbl">US Total</h4>
+							<div class = "numcell">
+								<table class = "numtb">
+									<tr>
+										<th id = "USTT">10000</th>
+									</tr>
+									<tr>
+										<th id = "USTTIncre">+100</th>
+									</tr>
+								</table>
+								
+							</div>
+						</div>
+					</th>
+					<th>
+						<div class = "statscell">
+							<h4 id = "USRlbl">US Recovered</h4>
+							<div class = "numcell">
+								<table class = "numtb">
+									<tr>
+										<th id = "USR">10000</th>
+									</tr>
+									<tr>
+										<th id = "USRIncre">+100</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</th>
+					<th>
+						<div class = "statscell">
+							<h4 id = "USDlbl">US Death</h4>
+							<div class = "numcell">
+								<table class = "numtb">
+									<tr>
+										<th id = "USD">10000</th>
+									</tr>
+									<tr>
+										<th id = "USDIncre">+100</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</th>
+				</tr>			
+				
+				
+			</table>
+			
+		</div>
+		<br>
+
+		<div class = "CAstats">
+			<h3 class = "title">CA COVID-19 Stats</h3>
+
+			<table class = "CAstatstb">
+				<tr>
+					<th>
+						<div class = "CAstatscell">
+							<h4 id = "CATTlbl">CA Total</h4>
+							<div class = "CAnumcell">
+								<table class = "numtb">
+									<tr>
+										<th id = "CATT">10000</th>
+									</tr>
+									<tr>
+										<th id = "CATTIncre">+100</th>
+									</tr>
+								</table>
+								
+							</div>
+						</div>
+					</th>
+					<th>
+						<div class = "CAstatscell">
+							<h4 id = "CADlbl">CA Death</h4>
+							<div class = "CAnumcell">
+								<table class = "numtb">
+									<tr>
+										<th id = "CAD">10000</th>
+									</tr>
+									<tr>
+										<th id = "CADIncre">+100</th>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</th>
+				</tr>			
+			</table>
+				
+			<table class = "OCLA">
+				<tr>
+					<th class = "LAth">
+						<div class = "centerct">
+						<table class = "LAtb">
+							
+							<tr>
+								<th>
+									<div class = "statscell">
+										<h4 id = "LATTlbl">LA Total</h4>
+										<div class = "numcell">
+											<table class = "numtb">
+												<tr>
+													<th id = "LATT">10000</th>
+												</tr>
+												<tr>
+													<th id = "LATTIncre">+100</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<div class = "statscell">
+										<h4 id = "LADlbl">LA Death</h4>
+										<div class = "numcell">
+											<table class = "numtb">
+												<tr>
+													<th id = "LAD">10000</th>
+												</tr>
+												<tr>
+													<th id = "LADIncre">+100</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</th>
+							</tr>
+							
+						</table>
+						</div>
+					</th>
+					<th class = "OCth">
+						<div class = "centerct">
+						<table class = "OCtb">						
+							<tr>
+								<th>
+									<div class = "statscell">
+										<h4 id = "OCTTlbl">OC Total</h4>
+										<div class = "numcell">
+											<table class = "numtb">
+												<tr>
+													<th id = OCTT>10000</th>
+												</tr>
+												<tr>
+													<th id = OCTTIncre>+100</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<div class = "statscell">
+										<h4 id = "OCDlbl">OC Death</h4>
+										<div class = "numcell">
+											<table class = "numtb">
+												<tr>
+													<th id = "OCD">10000</th>
+												</tr>
+												<tr>
+													<th id = "OCDIncre">+100</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<div class = "statscell">
+										<h4 id = "OCRlbl">OC Total Tested</h4>
+										<div class = "numcell">
+											<table class = "numtb">
+												<tr>
+													<th id = "OCR">10000</th>
+												</tr>
+												<tr>
+													<th id = "OCRIncre">+100</th>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</th>
+							</tr>
+							
+						</table>
+						</div>
+					</th>
+				</tr>
+			</table>
+			<h3 class = "title">OC Cities</h3>
+			<table class = "OCcity" id = "OCCity"></table>
+		</div>
+		<br>
+		<br>
+		<div class = "charts">
+			<div class = "inner">
+				<h3 class = "title">Charts</h3>
+				<table class = "charts">
+					<tr>
+						<th class = "chartth"> 
+							<canvas class = "chartstyle" id = "USC1">Chart1</canvas>
+						</th>
+						<th class = "chartth">
+							<canvas class = "chartstyle" id = "USC2">Chart2</canvas>
+						</th>
+
+					</tr>
+					<tr>
+						<th class = "chartth">
+							<canvas class = "chartstyle" id = "CA1">Chart1</canvas>
+						</th>
+						<th class = "chartth"> 
+							<canvas class = "chartstyle" id = "CA2">Chart2</canvas>
+						</th>
+					</tr>
+					<tr>
+						<th class = "chartth"><canvas class = "chartstyle" id = "LAC1">LA Chart 1</canvas></th>
+					
+						<th class = "chartth"><canvas class = "chartstyle" id = "LAC2">LA Chart 2</canvas></th>
+					</tr>
+					<tr>
+						<th class = "chartth"><canvas class = "chartstyle" id = "OCC1">OC Chart 1</canvas></th>
+					
+						<th class = "chartth"><canvas class = "chartstyle" id = "OCC2">OC Chart 2</canvas></th>
+					</tr>
+				</table>	
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<script>
+
+		function main(){
+			$.get("https://snnstatsapi.herokuapp.com/getData", function(data, status){
+				console.log(data)
+				raw = []
+				labels = []
+				for(key in data){
+					labels.push(key)
+					arr = []
+					for (sub in data[key]){
+						arr.push(data[key][sub].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+					}
+					raw.push(arr)
+				}
+
+				$("#USTT").text(raw[0][0])
+				$("#USR").text(raw[1][0])
+				$("#USD").text(raw[2][0])
+				$("#CATT").text(raw[3][0])
+				$("#CAD").text(raw[4][0])
+				$("#LATT").text(raw[5][0])
+				$("#LAD").text(raw[6][0])
+				$("#OCTT").text(raw[7][0])
+				$("#OCD").text(raw[8][0])
+				$("#OCR").text(raw[9][0])
+				
+				$("#USTTIncre").text("+"+raw[0][1])
+				$("#USRIncre").text("+"+raw[1][1])
+				$("#USDIncre").text("+"+raw[2][1])
+				$("#CATTIncre").text("+"+raw[3][1])
+				$("#CADIncre").text("+"+raw[4][1])
+				$("#LATTIncre").text("+"+raw[5][1])
+				$("#LADIncre").text("+"+raw[6][1])
+				$("#OCTTIncre").text("+"+raw[7][1])
+				$("#OCDIncre").text("+"+raw[8][1])
+				$("#OCRIncre").text("+"+raw[9][1])
+				raw=raw.slice(11)
+				labels=labels.slice(11)
+				console.log(raw)
+				console.log(labels)
+				
+				for (var i = 0; i < raw.length; i++){
+					var tr = document.createElement("tr")
+					var thTitle = document.createElement("th")
+					var thNum = document.createElement("th")
+					thTitle.appendChild(document.createTextNode(labels[i]))
+					if(raw[i][1] == 0){
+						thNum.appendChild(document.createTextNode(raw[i][0]))
+					}else{
+						thNum.appendChild(document.createTextNode(raw[i][0] + "  +" + raw[i][1]))
+					}
+					tr.appendChild(thTitle)
+					tr.appendChild(thNum)
+					if (i % 2 == 0){
+						tr.setAttribute("class","occitytrR")
+					}else{
+						tr.setAttribute("class","occitytrY")
+					}
+					thTitle.setAttribute("class","occityth")
+					thNum.setAttribute("class","occityth")
+					document.getElementById("OCCity").appendChild(tr)
+				}
+			});
+		}
+
+		function makeChart(){
+			dataAxis = []
+			USData = []
+			USIncre = []
+			LAData = []
+			LAIncre = []
+			OCData = []
+			OCIncre = []
+			CAData = []
+			CAIncre = []
+
+			var server = new XMLHttpRequest();
+			server.onreadystatechange = function () {
+				if (this.readyState == 4 ){
+				if( this.status == 200) {
+					data = JSON.parse(this.responseText)
+					for (date in data){
+						dataAxis.push(date)
+						list = data[date]
+						USData.push(list[0])
+						LAData.push(list[2])
+						OCData.push(list[3])
+						CAData.push(list[1])               
+					}
+				
+					console.log(USData)
+					console.log(LAData)
+					for(var i = 0; i < USData.length-1; i ++){
+						USIncre.push(USData[i+1]-USData[i])
+						CAIncre.push(CAData[i+1]-CAData[i])
+						LAIncre.push(LAData[i+1]-LAData[i])
+						OCIncre.push(OCData[i+1]-OCData[i])
+					}
+					renderChart("US Total \u5168\u56fd\u611f\u67d3",USData,dataAxis, "USC1", "rgb(65,192,192)")
+					renderChart("LA Total \u6d1b\u6749\u77f6\u53bf\u611f\u67d3",LAData,dataAxis, "LAC1", "rgb(76,235,52)")
+					renderChart("CA Total \u52a0\u5dde\u611f\u67d3",CAData,dataAxis, "CA1", "rgb(235,52,52)")
+					renderChart("OC Total \u6a59\u53bf\u611f\u67d3",OCData,dataAxis, "OCC1", "rgb(201,52,235)")
+					dataAxis.shift()
+					renderChart("US Daily Increase \u5168\u56fd\u65b0\u589e", USIncre, dataAxis,"USC2", "rgb(65,192,192)")
+					renderChart("OC Daily Increase \u6a59\u53bf\u65b0\u589e", OCIncre, dataAxis,"OCC2", "rgb(201,52,235)")
+					renderChart("LA Daily Increase \u6d1b\u6749\u77f6\u53bf\u65b0\u589e",LAIncre,dataAxis, "LAC2", "rgb(76,235,52)")
+					renderChart("CA Daily Increase \u52a0\u5dde\u65b0\u589e", CAIncre,dataAxis, "CA2", "rgb(235,52,52)")
+				}}
+			};
+			server.open("GET", "https://snnstatsapi.herokuapp.com/graphData", true);
+			server.send();
+
+			
+		}
+
+
+		function renderChart(label, data, xaxis, eleId, color) {
+			try {
+			var ctx = document.getElementById(eleId)
+			} catch (err) {
+			return
+			}
+			var type = 'line'
+			if (eleId.includes("2")) {
+			type = "bar"
+			min = 0
+			} else {
+			min = Math.round(Math.min(...data) - 0.05 * Math.min(...data))
+			}
+			var ctx = document.getElementById(eleId)
+			//ctx.style.backgroundColor = 'rgb(255,255,255)';
+			//ctx.style.padding = '5px';
+
+			//ctx.style.width = "100%"
+			//ctx.style.height = "100%"
+			var myChart = new Chart(ctx, {
+			type: type,
+			data: {
+				labels: xaxis,
+				datasets: [{
+				label: null,
+				fontColor: "white",
+
+				data: data,
+				borderColor: color,
+				backgroundColor: color,
+				fill: false,
+
+				}]
+			},
+			options: {
+				legend: {
+					display: false
+				},
+				title: {
+					display: true,
+					text: label,
+					fontColor: "white",
+
+			},
+				scales: {
+				yAxes: [{
+					display: true,
+					ticks: {
+					fontColor: "white",
+					min: min,             
+					},
+					gridLines: {
+						display: true ,
+						color: "#FFFFFF"
+					}
+				}],
+				xAxes:[{
+					ticks: {
+						fontColor: "white"
+					},
+					gridLines: {
+						display: true ,
+						color: "#FFFFFF"
+					},
+				}]
+				},
+				responsive:true,
+				//maintainAspectRatio:false
+			}
+			});
+		}
+
+		main()
+		makeChart()
+	</script>
+</body>
+</html>
