@@ -1,3 +1,8 @@
 .main{
     width: 100%;
+    border-collapse: collapse;
+}
+
+.main :nth-child(odd){
+    background-color: #bfbfbf;
 }
