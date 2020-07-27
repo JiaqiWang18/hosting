@@ -33,3 +33,5 @@ function mainPageHeader(){
     server.open("GET", "https://snnstatsapi.herokuapp.com/getData", true);
     server.send();
 }
+
+mainPageHeader()
