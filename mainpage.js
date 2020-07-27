@@ -4,6 +4,7 @@ function mainPageHeader(){
     if (this.readyState == 4 && this.status == 200) {
         data = JSON.parse(this.responseText)
         var counter = 0
+        var i = 1
         for (title in data){
             if(counter == 0 || counter == 3 || counter == 5 || counter == 7){
                 var tr = document.createElement("tr")
@@ -22,8 +23,15 @@ function mainPageHeader(){
                 tr.addEventListener('click', function () {
                     window.location.href = 'http://snnnewsus.com/corona-virus/'
                 });
+                if(i%2==0){
+                    tr.setAttribute("class","white")
+                }
+                else{
+                tr.setAttribute("class","grey")
+                }
                 document.getElementById("headerStats").appendChild(tr);
                 console.log(counter)
+                i++;
             }
             counter++;
             

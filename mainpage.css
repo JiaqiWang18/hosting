@@ -3,6 +3,10 @@
     border-collapse: collapse;
 }
 
-tr :nth-child(odd){
-    background-color: #bfbfbf;
+.grey{
+   background-color:  #8b8a8a;
+}
+
+.white{
+    background-color:  white;
 }
