@@ -1,14 +1,18 @@
 function main(){
     $.get("https://snnstatsapi.herokuapp.com/getData", function(data, status){
         console.log(data)
-        raw = []
-        labels = []
+        let raw = []
+        let labels = []
+        let rawNum = []
         for(key in data){
             labels.push(key)
             arr = []
+            numarr = []
             for (sub in data[key]){
                 arr.push(data[key][sub].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                numarr.push(data[key][sub])
             }
+            rawNum.push(numarr)
             raw.push(arr)
         }
 
@@ -22,17 +26,26 @@ function main(){
         $("#OCTT").text(raw[7][0])
         $("#OCD").text(raw[8][0])
         $("#OCR").text(raw[9][0])
-        
-        $("#USTTIncre").text("+"+raw[0][1])
-        $("#USRIncre").text("+"+raw[1][1])
-        $("#USDIncre").text("+"+raw[2][1])
-        $("#CATTIncre").text("+"+raw[3][1])
-        $("#CADIncre").text("+"+raw[4][1])
-        $("#LATTIncre").text("+"+raw[5][1])
-        $("#LADIncre").text("+"+raw[6][1])
-        $("#OCTTIncre").text("+"+raw[7][1])
-        $("#OCDIncre").text("+"+raw[8][1])
-        $("#OCRIncre").text("+"+raw[9][1])
+        console.log( rawNum)
+        const rate = rawNum[7][1]/rawNum[9][1]
+        $("#ocpositiverate").text(`${Math.round((rate + Number.EPSILON) * 100) / 100* 100}%`)
+        if(rawNum[9][1]==0){
+          $("#ocpositiverate").hide()
+          $("#hideLabel").hide()
+        }else{
+          $("#ocpositiverate").show()
+          $("#hideLabel").show()
+        }
+       
+        const ids = ["#USTTIncre","#USRIncre","#USDIncre","#CATTIncre","#CADIncre","#LATTIncre","#LADIncre","#OCTTIncre","#OCDIncre","#OCRIncre"]
+        for (var i = 0; i < ids.length; i++){
+          $(ids[i]).text("+"+raw[i][1])
+          if(rawNum[i][1]==0){
+            $(ids[i]).hide()
+          }else{
+            $(ids[i]).show()
+          }
+        }
         raw=raw.slice(11)
         labels=labels.slice(11)
         console.log(raw)

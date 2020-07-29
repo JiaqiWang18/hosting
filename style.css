@@ -182,6 +182,18 @@ table{
 	background-color:#FF5C00;
 }
 
+.ocpr{
+	padding: 0px;
+	margin:none;
+	height: min-content;
+	border:0;
+}
+
+.ocprfont{
+	padding-top: 15px;
+	font-size: 13px;
+}
+
 /*charts*/
 .charts{
 	width:100%;
