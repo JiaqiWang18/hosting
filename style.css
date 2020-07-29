@@ -194,6 +194,9 @@ table{
 	font-size: 13px;
 }
 
+.h5font{
+	color: white !important;
+}
 /*charts*/
 .charts{
 	width:100%;
